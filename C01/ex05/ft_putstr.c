@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avilleta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 14:34:00 by avilleta          #+#    #+#             */
-/*   Updated: 2020/10/20 18:42:20 by chlandol         ###   ########.fr       */
+/*   Created: 2020/10/20 19:16:57 by chlandol          #+#    #+#             */
+/*   Updated: 2020/10/20 19:37:11 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-void	rush(int x, int y);
+void ft_putchar(char c)
 
-int		main(void)
+void ft_putstr(char *str);
 {
-	rush(2, 2);
-	rush(5, 1);
-	rush(1, 1);
-	rush(1, 5);
-	rush(4, 4);
-	return (0);
+	int p;
+	p = 0;
+
+	while str[p] != '\0'
+		write (1, str++, 1);
 }
