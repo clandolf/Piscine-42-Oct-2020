@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 08:30:49 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/22 08:34:43 by chlandol         ###   ########.fr       */
+/*   Created: 2020/10/21 07:52:05 by chlandol          #+#    #+#             */
+/*   Updated: 2020/10/22 18:49:56 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *********nbr)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	*********nbr = 42;
+	int i;
+	int swap;
+
+	i = 0;
+	while (i < size / 2)
+	{
+		swap = tab[size - 1 - i];
+		tab[size - i - 1] = tab[i];
+		tab[i] = swap;
+		i++;
+	}
 }

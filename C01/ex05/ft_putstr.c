@@ -5,19 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 19:16:57 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/20 19:37:11 by chlandol         ###   ########.fr       */
+/*   Created: 2020/10/21 07:13:05 by chlandol          #+#    #+#             */
+/*   Updated: 2020/10/22 16:52:02 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_putchar(char c)
-
-void ft_putstr(char *str);
+void	ft_putstr(char *str)
 {
-	int p;
-	p = 0;
-
-	while str[p] != '\0'
-		write (1, str++, 1);
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
 }

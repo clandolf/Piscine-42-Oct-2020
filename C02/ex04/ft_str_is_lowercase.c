@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 08:30:49 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/22 08:34:43 by chlandol         ###   ########.fr       */
+/*   Created: 2020/10/23 09:08:36 by chlandol          #+#    #+#             */
+/*   Updated: 2020/10/24 19:22:21 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *********nbr)
+int ft_str_is_lowercase(char *str)
 {
-	*********nbr = 42;
+	int i;
+
+	i = 0;
+	if(str[i] == '\0')
+		return (1);
+	while
+	{
+		if(str[i] >= 97 && str[i] <= 122
+			return (1);
+		else
+			return (0);
 }
