@@ -6,18 +6,22 @@
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 09:07:56 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/24 19:21:06 by chlandol         ###   ########.fr       */
+/*   Updated: 2020/10/25 17:30:27 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_numeric(char *str)
-
+int	ft_str_is_numeric(char *str)
 {
-	while (*str)
+	int i;
+
+	i = 0;
+	if (str[i] == '\0')
+		return (1);
+	while (str[i] != '\0')
 	{
-		if (*str < '0' || *str > '9')
+		if (!(str[i] >= 48 && str[i] <= 57))
 			return (0);
-		str++;
-}
-			return (1);
+		i++;
+	}
+	return (1);
 }

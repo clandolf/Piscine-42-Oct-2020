@@ -6,17 +6,22 @@
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 09:08:36 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/24 19:22:21 by chlandol         ###   ########.fr       */
+/*   Updated: 2020/10/25 17:41:21 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_lowercase(char *str)
+int	ft_str_is_lowercase(char *str)
 {
-	while (*str)
-{
-	if(*str <= 122 || *str >= 97)
-		return (0);
-	str++;
-}
+	int i;
+
+	i = 0;
+	if (str[i] == '\0')
 		return (1);
+	while (str[i] != '\0')
+	{
+		if (!(str[i] >= 97 && str[i] <= 122))
+			return (0);
+		i++;
+	}
+	return (1);
 }
