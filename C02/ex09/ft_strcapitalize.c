@@ -6,7 +6,7 @@
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 09:11:15 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/26 19:31:10 by chlandol         ###   ########.fr       */
+/*   Updated: 2020/10/26 19:43:50 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char *ft_strcapitalize(char *str)
     while (str[i++] != '\0')
     {
         if ((str[i - 1] == ' ') || (i == 0)
-				|| str[i - 1] => 33 && str[i - 1] <= 47
-				|| str[ i - 1] >= 58 && str[i - 1] <= 64
-				|| str[i - 1] >= 91 && str[i - 1]<= 126))
+				|| ((str[i - 1] >= 0) && (str[i - 1] <= 47))
+				|| ((str[i - 1] >= 58) && (str[i - 1] <= 64))
+				|| ((str[i - 1] >= 123) && (str[i - 1] <= 126)))
 
         {
             if ((str[i] >= 97) && (str[i] <= 122))
@@ -39,7 +39,7 @@ char *ft_strcapitalize(char *str)
 
 int main (void)
 {
-    char str[] = "N'oublies pas d'eteindre 1la lumier3, ++ 41 OUI";
+    char str[] = "N'oublies$pas\nd'eteindre*1la lumier3, ++ 41 OUI";
 
     printf("%s", ft_strcapitalize(str));
 }
