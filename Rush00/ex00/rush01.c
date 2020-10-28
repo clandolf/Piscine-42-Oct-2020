@@ -6,7 +6,7 @@
 /*   By: avilleta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 14:35:30 by avilleta          #+#    #+#             */
-/*   Updated: 2020/10/20 18:43:07 by chlandol         ###   ########.fr       */
+/*   Updated: 2020/10/21 19:32:48 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@ void	ft_line(int x, char left, char mid, char right)
 	if (x-- >= 1)
 	{
 		ft_putchar(left);
-		while (x-- >= 2)
+		while (x-- >= 1)
 		{
 			ft_putchar(mid);
-			if (x == 1)
-			{
-				ft_putchar(right);
-			}
 		}
+		ft_putchar(right);
 		ft_putchar('\n');
 	}
 }
@@ -41,7 +38,7 @@ void	ft_midline(int x, int y, char wall)
 		{
 			ft_putchar(' ');
 		}
-		if (x > 1)
+		if (x >= 1)
 		{
 			ft_putchar(wall);
 		}

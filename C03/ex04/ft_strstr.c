@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 10:43:38 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/28 14:47:31 by chlandol         ###   ########.fr       */
+/*   Created: 2020/10/28 14:00:46 by chlandol          #+#    #+#             */
+/*   Updated: 2020/10/28 14:46:59 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int i;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
+	if (*to_find == 0)
+		return (str);
+	while (*str)
+	{
+		if (*str == *to_find)
+		{
+			i = 1;
+			while (to_find[i] && str[i] == to_find[i])
+				i++;
+			if (to_find[i] == 0)
+				return (str);
+		}
+		str++;
+	}
+	return (0);
 }

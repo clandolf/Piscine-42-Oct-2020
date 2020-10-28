@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 10:43:38 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/28 14:47:31 by chlandol         ###   ########.fr       */
+/*   Created: 2020/10/22 12:37:07 by chlandol          #+#    #+#             */
+/*   Updated: 2020/10/22 12:40:34 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+void	ft_print_combn(int n)
 {
-	int i;
+	char	list[11];
+	int		i;
 
+	list[0] = '0';
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
+	while (++i < n)
+	{
+		list[i] = list[i - 1] + 1;
+		list[n] = ',';
+		list[n + 1] = ' ';
+	}
+	while (list[0] <= ':' - n)
+	{
+		write(1, list, n + ((list[0] != ':' - n) ? 2 : 0));
+		i = n;
+		while (i--)
+		{
+			if (++list[i] <= ':' - n + i)
+				break ;
+		}
+		while (++i > 0 && i < n)
+			list[i] = list[i - 1] + 1;
+	}
 }

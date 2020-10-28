@@ -1,5 +1,0 @@
-Credentials cache: API:B23854FE-3ED2-47C8-838F-0C0A941D662D
-        Principal: chlandol@42.FR
-
-  Issued                Expires               Principal
-Oct 12 12:57:28 2020  Oct 19 12:57:19 2020  krbtgt/42.FR@42.FR

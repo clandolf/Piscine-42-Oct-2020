@@ -6,7 +6,7 @@
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 09:11:15 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/27 18:17:10 by chlandol         ###   ########.fr       */
+/*   Updated: 2020/10/28 17:43:28 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,22 @@ char	*ft_strcapitalize(char *str)
 	int i;
 
 	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
+	}
+	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i - 1] == ' ') || (i == 0)
-				|| ((str[i - 1] >= 0) && (str[i - 1] <= 47))
-				|| ((str[i - 1] >= 58) && (str[i - 1] <= 64))
-				|| ((str[i - 1] >= 123) && (str[i - 1] <= 126)))
+		if ((str[i] >= 'a' && str[i] <= 'z')
+				&& (str[i - 1] < '0' || str[i - 1] > 'z'
+					|| (str[i - 1] > '9' && str[i - 1] < 'A')
+					|| (str[i - 1] > 'Z' && str[i - 1] < 'a')))
 		{
-			if ((str[i] >= 97) && (str[i] <= 122))
-				str[i] -= 32;
-			i++;
+			str[i] -= 32;
 		}
-		if ((str[i] >= 65) && (str[i] <= 90))
-			str[i] += 32;
 		i++;
 	}
 	return (str);

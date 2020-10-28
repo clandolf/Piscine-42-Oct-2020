@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chlandol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 10:43:38 by chlandol          #+#    #+#             */
-/*   Updated: 2020/10/28 14:47:31 by chlandol         ###   ########.fr       */
+/*   Created: 2020/10/28 16:17:22 by chlandol          #+#    #+#             */
+/*   Updated: 2020/10/28 16:27:01 by chlandol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int i;
+#include <unistd.h>
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void ft_putnbr(int nb);
+{
+	if (nb == -2147483648)
+		write(1, "-2147483648", 11);
+	else
+	{
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			nb = nb * (-1);
+		}
+		if (nb > 9)
+		{
+			ft_putnbr(nb / 10);
+			ft_putnbr(nb % 10);
+		}
+		else
+		{
+			ft_putchar(nb + '0');
+		}
+	}
 }
